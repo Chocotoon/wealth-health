@@ -1,0 +1,12 @@
+.table_pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table_pagination .table_navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;
+}
