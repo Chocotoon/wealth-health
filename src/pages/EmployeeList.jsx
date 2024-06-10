@@ -4,8 +4,7 @@ import Title from '../components/Title'
 import { useStore } from 'react-redux'
 import { Table } from 'nk-table-component'
 import { columns } from "../data/columns"
-import { mockColumns } from '../data/mockColumns'
-import { mockData } from '../data/mockData'
+
 
 function EmployeeList() {
     const store = useStore()
@@ -18,7 +17,7 @@ function EmployeeList() {
                     <h1>Current Employees</h1>
                 </Title>
                 
-                    <Table data={mockData} range={range} columns={mockColumns}/>
+                    <Table data={employees} range={range} columns={columns}/>
             
                 <Link to="/">Home</Link>
             </div>
