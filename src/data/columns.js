@@ -54,7 +54,7 @@ export const columns = [
     {   
         scope: 'col',
         label: 'Zip Code',
-        type: 'string',
+        type: 'number',
         dataKey: 'zipCode'
     }
 

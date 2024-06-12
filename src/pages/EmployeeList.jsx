@@ -5,11 +5,10 @@ import { useStore } from 'react-redux'
 import { Table } from 'nk-table-component'
 import { columns } from "../data/columns"
 
-
 function EmployeeList() {
     const store = useStore()
     const employees = store.getState().employees
-    const range = [2, 4, 10, 100]
+    const range = [10, 25, 50, 100]
     return (
         <div>
             <div id="employee-div" className="container">

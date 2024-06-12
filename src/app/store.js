@@ -2,8 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 
 let state = {
     employees: [],
-    isComponentVisible: false,
-    offset: 10
+    isComponentVisible: false
 }
 
 const reducer = (currentState, action) => {
@@ -13,8 +12,6 @@ const reducer = (currentState, action) => {
         case 'ADD_EMPLOYEE': 
             const updatedEmployees = [...currentState.employees, action.payload]
             return {...currentState, employees: updatedEmployees}
-        case 'SET_OFFSET': 
-            return {  ...currentState, offset: action.payload}
         default:
             return currentState
     }

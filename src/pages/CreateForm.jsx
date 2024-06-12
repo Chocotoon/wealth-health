@@ -1,7 +1,6 @@
 import '../styles/CreateForm.css'
 import { Link } from 'react-router-dom'
-import { useEffect } from 'react';
-import { states, setStates } from '../data/states';
+import { states } from '../data/states';
 import { departments } from '../data/department';
 import Title from '../components/Title';
 import Modale from '../components/Modale';
@@ -20,23 +19,37 @@ function CreateForm() {
         const street = document.getElementById('street');
         const city = document.getElementById('city');
         const state = document.getElementById('state');
-        const zipCode = document.getElementById('zip-code');
-        const currentEmployee = {
-            firstName: firstName.value,
-            lastName: lastName.value,
-            dateOfBirth: dateOfBirth.value,
-            startDate: startDate.value,
-            department: department.value,
-            street: street.value,
-            city: city.value,
-            state: states.find(el => el.name === state.value).abbreviation,
-            zipCode: zipCode.value
-        };
-        store.dispatch({type: 'ADD_EMPLOYEE', payload: currentEmployee})
-        store.dispatch({type:'TOGGLE_VUE'})
+        const zipCode = document.getElementById('zip-code')
+        if (firstName.value === "" ||
+            lastName.value === "" ||
+            dateOfBirth.value === "" ||
+            startDate.value === "" ||
+            department.value === "" ||
+            street.value === "" ||
+            city.value === "" ||
+            state.value === "" ||
+            zipCode.value === "") {
+            alert("Please fill the form")
+        }
+        else {
+            const currentEmployee = {
+                firstName: firstName.value,
+                lastName: lastName.value,
+                dateOfBirth: dateOfBirth.value,
+                startDate: startDate.value,
+                department: department.value,
+                street: street.value,
+                city: city.value,
+                state: states.find(el => el.name === state.value).abbreviation,
+                zipCode: zipCode.value
+            }
+
+            store.dispatch({ type: 'ADD_EMPLOYEE', payload: currentEmployee })
+            store.dispatch({ type: 'TOGGLE_VUE' })
+
+        }
     }
-    useEffect(() =>
-        setStates(), [])
+   
     return (
 
         <div>
@@ -59,15 +72,15 @@ function CreateForm() {
                         <input type="text" id="last-name" />
 
                         <Datepicker id="date-of-birth"
-                                    htmlFor="date-of-birth" 
-                                    label="Date of Birth"/>
-                        
+                            htmlFor="date-of-birth"
+                            label="Date of Birth" />
+
                         <Datepicker id="start-date"
-                                    htmlFor="start-date" 
-                                    label="Start Date"/>
+                            htmlFor="start-date"
+                            label="Start Date" />
 
                         <label htmlFor="department">Department</label>
-                        <Dropdown name="department" id="department" data={ departments }/>
+                        <Dropdown name="department" id="department" data={departments} />
                     </fieldset>
                     <fieldset className="address">
                         <legend>Address</legend>
@@ -79,8 +92,8 @@ function CreateForm() {
                         <input id="city" type="text" />
 
                         <label htmlFor="state">State</label>
-                        <Dropdown name="state" id="state" data={states}/>
-                        
+                        <Dropdown name="state" id="state" data={states} />
+
                         <label htmlFor="zip-code">Zip Code</label>
                         <input id="zip-code" type="number" />
                     </fieldset>
@@ -90,7 +103,7 @@ function CreateForm() {
 
                 <button id="save_btn" onClick={saveEmployee}>Save</button>
             </div>
-            <Modale content="Employee Created!"/>
+            <Modale content="Employee Created!" />
 
         </div>
 

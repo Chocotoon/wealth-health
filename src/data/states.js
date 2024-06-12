@@ -236,14 +236,3 @@ export const states = [
         "abbreviation": "WY"
     }
 ];
-
-export function setStates() {
-    const stateSelect = document.getElementById('state');
-    states.forEach((state) => {
-        const option = document.createElement('option');
-        option.value = state.abbreviation;
-        option.text = state.name;
-        stateSelect.appendChild(option);
-    })
-}
-
