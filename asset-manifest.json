@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/wealth-health/static/css/main.85337ab1.css",
-    "main.js": "/wealth-health/static/js/main.dda0edf2.js",
+    "main.js": "/wealth-health/static/js/main.7a51dcb0.js",
     "static/js/453.959a7f3b.chunk.js": "/wealth-health/static/js/453.959a7f3b.chunk.js",
     "index.html": "/wealth-health/index.html",
     "main.85337ab1.css.map": "/wealth-health/static/css/main.85337ab1.css.map",
-    "main.dda0edf2.js.map": "/wealth-health/static/js/main.dda0edf2.js.map",
+    "main.7a51dcb0.js.map": "/wealth-health/static/js/main.7a51dcb0.js.map",
     "453.959a7f3b.chunk.js.map": "/wealth-health/static/js/453.959a7f3b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.85337ab1.css",
-    "static/js/main.dda0edf2.js"
+    "static/js/main.7a51dcb0.js"
   ]
 }
