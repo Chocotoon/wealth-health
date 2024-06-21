@@ -11,45 +11,44 @@ import { useStore } from 'react-redux'
 function CreateForm() {
     const store = useStore()
     function saveEmployee() {
-        const firstName = document.getElementById('first-name');
-        const lastName = document.getElementById('last-name');
-        const dateOfBirth = document.getElementById('date-of-birth');
-        const startDate = document.getElementById('start-date');
-        const department = document.getElementById('department');
-        const street = document.getElementById('street');
-        const city = document.getElementById('city');
-        const state = document.getElementById('state');
-        const zipCode = document.getElementById('zip-code')
-        if (firstName.value === "" ||
-            lastName.value === "" ||
-            dateOfBirth.value === "" ||
-            startDate.value === "" ||
-            department.value === "" ||
-            street.value === "" ||
-            city.value === "" ||
-            state.value === "" ||
-            zipCode.value === "") {
+        const firstName = document.getElementById('first-name').value;
+        const lastName = document.getElementById('last-name').value;
+        const dateOfBirth = document.getElementById('date-of-birth').value;
+        const startDate = document.getElementById('start-date').value;
+        const department = document.getElementById('department').value;
+        const street = document.getElementById('street').value;
+        const city = document.getElementById('city').value;
+        const state = document.getElementById('state').value;
+        const zipCode = document.getElementById('zip-code').value
+        if (firstName === "" ||
+            lastName === "" ||
+            dateOfBirth === "" ||
+            startDate === "" ||
+            department === "" ||
+            street === "" ||
+            city === "" ||
+            state === "" ||
+            zipCode === "") {
             alert("Please fill the form")
         }
         else {
             const currentEmployee = {
-                firstName: firstName.value,
-                lastName: lastName.value,
-                dateOfBirth: dateOfBirth.value,
-                startDate: startDate.value,
-                department: department.value,
-                street: street.value,
-                city: city.value,
-                state: states.find(el => el.name === state.value).abbreviation,
-                zipCode: zipCode.value
+                firstName: firstName,
+                lastName: lastName,
+                dateOfBirth: dateOfBirth,
+                startDate: startDate,
+                department: department,
+                street: street,
+                city: city,
+                state: states.find(el => el.name === state).abbreviation,
+                zipCode: zipCode
             }
-
             store.dispatch({ type: 'ADD_EMPLOYEE', payload: currentEmployee })
             store.dispatch({ type: 'TOGGLE_VUE' })
 
         }
     }
-   
+
     return (
 
         <div>

@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-    <Router>
+    <Router basename='/wealth-health'>
       <Routes>
         <Route path="/" element= {<CreateForm/>} />
         <Route path="/employeeList" element= {<EmployeeList/>} />
